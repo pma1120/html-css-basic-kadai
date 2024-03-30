@@ -1,0 +1,118 @@
+h1,
+p,
+body {
+    margin: 0;
+}
+
+p,
+a {
+    font-size: 20px;
+}
+
+header {
+    margin-bottom: 20px;
+    /* 下の余白 */
+    background-color: rgb(244, 79, 79);
+    /* 背景色 */
+    text-align: center;
+    /* 中の要素が中央揃え */
+
+    h1 {
+        color: rgb(255, 255, 255);
+        /* 文字色 */
+    }
+}
+
+main {
+    margin: 10px;
+    /* main要素内の余白を上下左右ともに10px */
+}
+
+#parent {
+    display: flex;
+    /* 中の要素を中央揃えにするためのFlexコンテナを作成 */
+    justify-content: space-around;
+    /* 中の要素を一番左と一番右のアイテムも含め、均等な間隔で配置する */
+}
+
+.content {
+    border: solid 3px rgb(238, 204, 204);
+    /* 線の設定　*/
+    flex-basis: 25%;
+    /* 幅の設定 */
+    padding: 10px 15px;
+    /* 要素内の余白の設定 */
+    margin: 20px 0;
+    /* 要素外の余白の設定 */
+    align-items: center;
+    /* 中の要素を垂直方向に中央揃え */
+    text-align: center;
+
+}
+
+h2 {
+    font-size: 25px;
+    /* 文字のサイズ */
+    border-bottom: 3px dotted rgb(236, 122, 122);
+    /* 下線の設定 */
+}
+
+/* 要素の前に○○ */
+h2::before {
+    content: "⚫︎";
+    /*　h2要素の前に⚫︎記号を表示　*/
+    color: rgb(239, 111, 139);
+    /* ⚫︎の色 */
+}
+
+/* 2番目のp要素内のテキストの中で一番目の文字にのみ○○ */
+.content p:nth-of-type(2)::first-letter {
+    font-weight: bold;
+    color: rgb(97, 206, 249);
+}
+
+footer {
+    background-color: rgb(244, 79, 79);
+    /* 背景色 */
+    text-align: center;
+    /* 中身の要素が中央揃え */
+}
+
+.content img {
+    margin: 10px 0;
+    /* marginは上下10px、左右0px */
+    width: 70%;
+    /* 幅70% */
+}
+
+a {
+    color: rgb(255, 255, 255);
+    /* 文字色 */
+}
+
+a:visited {
+    color: rgb(193, 234, 251);
+    /* 訪問済みリンクの文字色 */
+}
+
+a:hover {
+    color: rgb(245, 178, 168);
+    /* マウスカーソルが乗るときの文字色 */
+}
+
+/* 画面幅768px以下になった時のブレークポイントの設定 */
+@media screen and (max-width: 768px) {
+
+    h2 {
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 25px;
+    }
+
+    #parent {
+        display: flex;
+        flex-direction: column;
+    }
+}
